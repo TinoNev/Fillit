@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/16 13:17:46 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/16 14:46:17 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int		main(int argc, char **argv)
 	if (ft_is_valid(str) == 0)
 		return (0);
 	tetri = ft_tetrinew(str);
-	return (0);
+	if (ft_error(tetri) == 0)
+		return (0);
+	return (1);
 }

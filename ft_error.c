@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:19:50 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 11:02:04 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/16 14:44:22 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,23 @@ int		ft_count_line(char *str)
 			}
 		}
 		i++;
+	}
+	return (1);
+}
+
+int		ft_error(char **tetri)
+{
+	int x;
+
+	x = 0;
+	while (tetri[x] != '\0')
+	{
+		if (tetri[x] == ERROR)
+		{
+			ft_putendl(ERROR);
+			return (0);
+		}
+		x++;
 	}
 	return (1);
 }

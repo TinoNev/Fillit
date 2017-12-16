@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 11:41:42 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 14:20:32 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/16 14:43:13 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int		ft_valid_char(char *str);
 int		ft_are_four(char *str);
 int		ft_count_char(char *str);
 int		ft_count_line(char *str);
+int		ft_error(char **tetri);
 int		ft_is_valid(char *str);
 char	**ft_tabvalue(void);
 int		ft_nbdiese(char *str);
