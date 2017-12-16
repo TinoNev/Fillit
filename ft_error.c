@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:19:50 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 14:44:22 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/16 14:58:46 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,19 +111,18 @@ int		ft_count_line(char *str)
 	return (1);
 }
 
-int		ft_error(char **tetri)
+int		ft_error(char *str)
 {
-	int x;
+	int i;
 
-	x = 0;
-	while (tetri[x] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (tetri[x] == ERROR)
-		{
-			ft_putendl(ERROR);
+		if (str[i] == '#' && (str[i - 1] == '#' || str[i + 1] == '#'
+					|| str[i + 5] == '#'))
+			++i;
+		else
 			return (0);
-		}
-		x++;
 	}
 	return (1);
 }
