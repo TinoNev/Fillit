@@ -6,38 +6,54 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 10:25:17 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/04 15:34:37 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/16 13:20:40 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "include.h"
+#include "fillit.h"
 
-char	**ft_tetrisplit(char *str, int size)
+static int		ft_sizetetri(char *str)
+{
+	int	i;
+	int	n;
+	int	size;
+
+	size = 0;
+	i = 0;
+	n = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == '\n')
+			n++;
+		i++;
+	}
+	size = (i - n) / 16;
+	return (size);
+}
+
+static char	**ft_tetrisplit(char *str, int size)
 {
 	int		i;
 	int		x;
-	int		n;
-	char	**tdest;
+	char	**tetri;
 
 	x = 0;
 	i = 19;
-	n = 0;
-	if (!(tdest = (char **)malloc(sizeof(char *) * size + 1)))
+	if (!(tetri = (char **)malloc(sizeof(char *) * size + 1)))
 		return (NULL);
 	while (str[i] != '\0')
 	{
-		tdest[x] = ft_strsub(str, i - 19, (i - (i - 19)));
+		tetri[x] = ft_strsub(str, i - 19, (i - (i - 19)));
 		x++;
 		if (str[i + 1] == '\n')
 			i = i + 20;
 		++i;
 	}
-	tdest[x] = NULL;
-	return (tdest);
+	tetri[x] = NULL;
+	return (tetri);
 }
 
-char	**ft_tetricmp(char **s1, char **s2)
+static char	**ft_tetricmp(char **s1, char **s2)
 {
 	int	i;
 	int	j;
@@ -58,26 +74,40 @@ char	**ft_tetricmp(char **s1, char **s2)
 	return (s1);
 }
 
-char	**ft_alphatetri(char **str)
+static char	**ft_alphatetri(char **tetri)
 {
-	int		i;
-	int		s;
+	int		x;
+	int		y;
 	char	a;
 
-	s = 0;
-	i = 0;
+	x = 0;
+	y = 0;
 	a = 'A';
-	while (str[i] != '\0')
+	while (tetri[x] != '\0')
 	{
-		while (str[i][s])
+		while (tetri[x][y])
 		{
-			if (str[i][s] == '#')
-				str[i][s] = a;
-			s++;
+			if (tetri[x][y] == '#')
+				tetri[x][y] = a;
+			y++;
 		}
 		a++;
-		s = 0;
-		i++;
+		y = 0;
+		x++;
 	}
-	return (str);
+	return (tetri);
+}
+
+char	**ft_tetrinew(char *str)
+{
+	char **tetri;
+	char **tab;
+	int x;
+
+	x = 0;
+	tab = ft_tabvalue();
+	tetri = ft_tetrisplit(str, ft_sizetetri(str));
+	tetri = ft_tetricmp(tetri, tab);
+	tetri = ft_alphatetri(tetri);
+	return (tetri);
 }

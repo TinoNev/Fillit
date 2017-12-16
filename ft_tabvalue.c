@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/06 14:25:16 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/16 11:48:02 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/16 14:03:46 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,30 +53,4 @@ char			**ft_tabvalue(void)
 	tab[17] = "#...\n##..\n.#..\n....\n";
 	tab[18] = "##..\n##..\n....\n....\n";
 	return (tab);
-}
-
-char			*ft_destvalue(int ssqrt)
-{
-	char	*dest;
-	int		i;
-	int		len;
-
-	len = (ssqrt * ssqrt) + ssqrt + 1;
-	i = 0;
-	if (!(dest = (char *)malloc(sizeof(char) * len)))
-		return (NULL);
-	while (i < len - 1)
-	{
-		dest[i] = '.';
-		i++;
-	}
-	i = ssqrt;
-	while (i < len - 1)
-	{
-		dest[i] = '\n';
-		i + 1 < len - 1 ? i = i + ssqrt : 0;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
 }

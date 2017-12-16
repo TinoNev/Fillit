@@ -6,14 +6,13 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 10:22:45 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/13 17:17:57 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/16 13:56:02 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include.h"
-#include "Libft/libft.h"
+#include "fillit.h"
 
-static int		ft_checkposition(char *dest, char *str, int i, int x)
+static int		ft_checkpoint(char *dest, char *str, int i, int x)
 {
 	if (str[i] >= 'A' && str[i] <= 'Z')
 	{
@@ -25,43 +24,43 @@ static int		ft_checkposition(char *dest, char *str, int i, int x)
 	return (1);
 }
 
-static int		ft_checkdisplay(char *dest, char *str, int ssqrt, int x)
+static int		ft_checkposition(char *dest, char *str, int ssqrt, int x)
 {
 	int i;
-	int n;
-	int j;
 	int tmp;
+	int start;
+	int max;
 
 	i = -1;
-	j = 0;
-	n = x;
-	tmp = x + ssqrt;
+	start = 0;
+	tmp = x;
+	max = x + ssqrt;
 	while (str[++i] != '\0')
 	{
-		j = ft_jvalue(str, i, j);
+		start = ft_startvalue(str, i, start);
 		i = ft_ispoint(str, i);
-		if (x <= tmp || (j == -1 && str[i - 1] == '.'))
+		if (x <= max || (start == -1 && str[i - 1] == '.'))
 		{
-			if (ft_checkposition(dest, str, i, x) == 0)
+			if (ft_checkpoint(dest, str, i, x) == 0)
 				return (0);
 		}
-		else if (ft_checkposition(dest, str, i, x + j) == 0)
+		else if (ft_checkpoint(dest, str, i, x + start) == 0)
 			return (0);
-		str[i] == '\n' ? x = n + ssqrt : 0;
-		str[i] == '\n' ? n = n + ssqrt + 1 : 0;
+		str[i] == '\n' ? x = tmp + ssqrt : 0;
+		str[i] == '\n' ? tmp = tmp + ssqrt + 1 : 0;
 		x++;
 	}
 	return (1);
 }
 
-static int		ft_xposition(char c, int x)
+static int		ft_notpoint(char c, int x)
 {
 	while (c != '.' && c != '\0')
 		x++;
 	return (x);
 }
 
-int		ft_checkplacement(char *dest, char *str, int ssqrt)
+int		ft_checkplace(char *dest, char *str, int ssqrt)
 {
 	int x;
 	int i;
@@ -70,7 +69,7 @@ int		ft_checkplacement(char *dest, char *str, int ssqrt)
 	x = 0;
 	while (dest[x] != '\0')
 	{
-		ft_xposition(dest[x], x);
+		ft_notpoint(dest[x], x);
 		if ((x == 0 || dest[x - 1] == '\n') && i == 0)
 		{
 			while (str[i] == '.')
@@ -79,7 +78,7 @@ int		ft_checkplacement(char *dest, char *str, int ssqrt)
 				i++;
 			}
 		}
-		if (ft_checkdisplay(dest, str, ssqrt, x) == 1)
+		if (ft_checkposition(dest, str, ssqrt, x) == 1)
 			return (x);
 		else
 		{

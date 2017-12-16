@@ -3,40 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_annexe.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/04 15:40:01 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 11:35:58 by lchaillo         ###   ########.fr       */
+/*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
+/*   Updated: 2017/12/16 13:58:52 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_nbdiese(char *str)
+int		ft_startvalue(char *src, int i, int start)
 {
-	int i;
-	int d;
-
-	i = 0;
-	d = 0;
-	while (str[i] != '\0')
+	if (start == 0)
 	{
-		if (str[i] == '#')
-			d++;
-		i++;
+		if (i == 0)
+		{
+			while (src[i] == '.')
+			{
+				start--;
+				i++;
+			}
+		}
+		else if (src[i - 1] == '\n')
+		{
+			while (src[i] == '.')
+			{
+				start++;
+				i++;
+			}
+		}
 	}
-	return (d);
+	return (start);
 }
 
-int		ft_ssqrt(int nb)
+int		ft_ispoint(char *src, int i)
+{
+	while (src[i] == '.')
+		++i;
+	return (i);
+}
+
+char	ft_savechar(char *str)
 {
 	int i;
 
-	i = 2;
-	while (i * i < nb)
-		i++;
-	if (i * i > nb)
-		return (ft_ssqrt(nb + 1));
-	else
-		return (i);
+	i = 0;
+	while (str[i] == '.')
+		++i;
+	return (str[i]);
 }

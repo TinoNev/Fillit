@@ -1,82 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_backtracking.c                                  :+:      :+:    :+:   */
+/*   ft_check3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/12/07 11:18:03 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/12 12:00:08 by tlaberro         ###   ########.fr       */
+/*   Created: 2017/12/15 11:54:25 by tlaberro          #+#    #+#             */
+/*   Updated: 2017/12/16 14:20:56 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include.h"
-#include "Libft/libft.h"
+#include "fillit.h"
 
-int		ft_jvalue(char *src, int i, int j)
+char    *ft_backtracking(char **tetri, char *dest, int ssqrt)
 {
-	if (j == 0)
-	{
-		if (i == 0)
-		{
-			while (src[i] == '.')
-			{
-				j--;
-				i++;
-			}
-		}
-		else if (src[i - 1] == '\n')
-		{
-			while (src[i] == '.')
-			{
-				j++;
-				i++;
-			}
-		}
-	}
-	return (j);
-}
-
-int		ft_ispoint(char *src, int i)
-{
-	while (src[i] == '.')
-		i++;
-	return (i);
-}
-
-char	*ft_destcpy(char *src, char *dest, int x, int i)
-{
-	if (src[i] >= 'A' && src[i] <= 'Z')
-	{
-		dest[x] = src[i];
-	}
-	return (dest);
-}
-
-char	*ft_display(char *src, char *dest, int x, int ssqrt)
-{
+	int x;
 	int i;
-	int n;
-	int j;
+	int tmp;
+	char c;
 
+	x = 0;
 	i = 0;
-	j = 0;
-	n = x;
-	while (src[i] != '\0')
+	tmp = 0;
+	c = 0;
+	while (ft_nexttetri(tetri, dest, x) != -1)
 	{
-		j = ft_jvalue(src, i, j);
-		i = ft_ispoint(src, i);
-		if (x < ssqrt || (j == -1 && src[i - 1] == '.'))
-			dest = ft_destcpy(src, dest, x, i);
-		else
-			dest = ft_destcpy(src, dest, x + j, i);
-		if (src[i] == '\n')
+		x = ft_nexttetri(tetri, dest, x);
+		i = ft_checkplace(dest, tetri[x], ssqrt);
+		if (i != -1)
 		{
-			x = n + ssqrt;
-			n = n + ssqrt + 1;
+			ft_display(tetri[x], dest, i, ssqrt);
+			tmp = x;
+			c = ft_savechar(tetri[x]);
+			x = 0;
+			i = 0;
 		}
-		x++;
-		i++;
+		else
+		{
+			x++;
+			if (tetri[x] == '\0')
+			{
+				ft_dellasttetri(dest, c);
+				x = tmp + 1;
+			}
+		}
 	}
+	if (ft_checkupdest(dest, ssqrt) == 0)
+		{
+			ssqrt = ssqrt + 1;
+			ft_upsizedest(dest, ssqrt);
+			return (ft_backtracking(tetri, dest, ssqrt));
+		}
 	return (dest);
 }

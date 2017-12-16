@@ -6,31 +6,11 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 15:54:08 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/04 11:06:22 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/16 12:35:31 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "include.h"
-
-int		ft_sizetetri(char *str)
-{
-	int i;
-	int m;
-	int size;
-
-	size = 0;
-	i = 0;
-	m = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '\n')
-			m++;
-		i++;
-	}
-	size = (i - m) / 16;
-	return (size);
-}
+#include "fillit.h"
 
 int		ft_atoibin(char *str)
 {
