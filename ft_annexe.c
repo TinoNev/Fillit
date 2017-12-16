@@ -6,12 +6,11 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/04 15:40:01 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/04 15:40:03 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/16 11:35:58 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "include.h"
+#include "fillit.h"
 
 int		ft_nbdiese(char *str)
 {

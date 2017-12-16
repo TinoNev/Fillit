@@ -6,14 +6,13 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:19:50 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/01 16:10:39 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/16 11:02:04 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
-#include "include.h"
+#include "fillit.h"
 
-char	*ft_regular(char *str)
+int		ft_valid_char(char *str)
 {
 	int i;
 	int size;
@@ -25,26 +24,12 @@ char	*ft_regular(char *str)
 		i++;
 	}
 	if (i == size)
-		return (OK);
+		return (1);
 	else
-		return (ERROR);
-}
-
-int		ft_usage(int argc)
-{
-	char *usage;
-
-	usage = "usage : fillit source_file";
-	if (argc != 2)
-	{
-		write(1, usage, ft_strlen(usage));
-		write(1, "\n", 1);
 		return (0);
-	}
-	return (1);
 }
 
-char	*ft_fourdiese(char *str)
+int		ft_are_four(char *str)
 {
 	int i;
 	int n;
@@ -62,17 +47,17 @@ char	*ft_fourdiese(char *str)
 		if (n == 4)
 		{
 			if (d != 4)
-				return (ERROR);
+				return (0);
 			n = 0;
 			d = 0;
 			i++;
 		}
 		i++;
 	}
-	return (OK);
+	return (1);
 }
 
-char	*ft_charonline(char *str)
+int		ft_count_char(char *str)
 {
 	int i;
 	int n;
@@ -88,17 +73,17 @@ char	*ft_charonline(char *str)
 		{
 			n++;
 			if (c != 5 && n < 5)
-				return (ERROR);
+				return (0);
 			c = 0;
 			if (n == 5)
 				n = 0;
 		}
 		i++;
 	}
-	return (OK);
+	return (1);
 }
 
-char	*ft_count_line(char *str)
+int		ft_count_line(char *str)
 {
 	int i;
 	int n;
@@ -118,10 +103,10 @@ char	*ft_count_line(char *str)
 					n = 0;
 				}
 				else
-					return (ERROR);
+					return (0);
 			}
 		}
 		i++;
 	}
-	return (OK);
+	return (1);
 }
