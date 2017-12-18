@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 11:54:25 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 15:13:15 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 16:11:20 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*ft_backtracking(char **tetri, char *dest, int ssqrt)
 		else
 		{
 			x++;
-			if (tetri[x] == '\0')
+			if (tetri[x] == '\0' && ft_destchar(dest) == 1)
 			{
 				ft_dellasttetri(dest, c);
 				x = tmp + 1;

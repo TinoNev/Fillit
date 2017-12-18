@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/18 15:12:54 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 16:10:17 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,18 @@ char	ft_savechar(char *str)
 	i = 0;
 	ft_ispoint(str, i);
 	return (str[i]);
+}
+
+int		ft_deschar(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			return (1);
+		++i;
+	}
+	return (0);
 }
