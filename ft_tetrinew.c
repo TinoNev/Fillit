@@ -55,8 +55,8 @@ static char		**ft_tetrisplit(char *str, int size)
 
 static char		**ft_tetricmp(char **s1, char **s2)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -98,7 +98,7 @@ static char		**ft_alphatetri(char **tetri)
 	return (tetri);
 }
 
-char		**ft_tetrinew(char *str)
+char			**ft_tetrinew(char *str)
 {
 	char	**tetri;
 	char	**tab;
