@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:27:08 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 11:27:11 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/18 12:35:32 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_destvalue(int ssqrt)
 
 	len = ssqrt * ssqrt + ssqrt + 1;
 	i = 0;
-	if (!(dest = (char *)malloc(sizeof(char) * len)))
+	if (!(dest = ft_strnew(len)))
 		return (NULL);
 	while (i < len - 1)
 	{
@@ -63,13 +63,12 @@ char	*ft_destvalue(int ssqrt)
 		i + 1 < len - 1 ? i = i + ssqrt : 0;
 		++i;
 	}
-	dest[i] = '\0';
 	return (dest);
 }
 
 char	*ft_upsizedest(char *dest, int ssqrt)
 {
 	ft_strdel(&dest);
-	ft_destvalue(ssqrt);
+	dest = ft_destvalue(ssqrt);
 	return (dest);
 }

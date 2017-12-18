@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 11:24:59 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/18 12:18:00 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_display(char *src, char *dest, int x, int ssqrt);
 char	ft_savechar(char *str);
 char	*ft_upsizedest(char *dest, int ssqrt);
 char	*ft_dellasttetri(char *dest, char c);
-int		ft_checkupdest(char *dest, int ssqrt);
+int		ft_checkupdest(char *dest, char **tetri);
 int		ft_nexttetri(char **tetri, char *dest, int x);
 char	*ft_backtracking(char **tetri, char *dest, int ssqrt);
 

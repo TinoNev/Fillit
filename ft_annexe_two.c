@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:25:49 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 11:25:53 by tlaberro         ###   ########.fr       */
+/*   Updated: 2017/12/18 12:18:12 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,33 @@ char	*ft_dellasttetri(char *dest, char c)
 	return (dest);
 }
 
-int		ft_checkupdest(char *dest, int ssqrt)
+int		ft_checkupdest(char *dest, char **tetri)
 {
 	int x;
-	int p;
+	int y;
+	int i;
 
-	p = 0;
 	x = 0;
-	while (x < ssqrt)
+	y = 0;
+	i = 0;
+	while (tetri[x] != '\0')
 	{
-		if (dest[x] == '.')
-			p++;
+		y = ft_ispoint(tetri[x], y);
+		if (tetri[x][y] >= 'A' && tetri[x][y] <= 'Z')
+		{
+			while (dest[i] != tetri[x][y] && dest[i] != '\0')
+				i++;
+			if (dest[i] == '\0')
+				return (0);
+			else
+			{
+				y = 0;
+				i = 0;
+			}
+		}
 		x++;
 	}
-	if (p != ssqrt)
-		return (1);
-	else
-		return (0);
+	return (1);
 }
 
 int		ft_nexttetri(char **tetri, char *dest, int x)
