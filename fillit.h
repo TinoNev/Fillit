@@ -6,12 +6,12 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/28 11:41:42 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 14:59:05 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:25:05 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INCLUDE_H
-# define INCLUDE_H
+#ifndef FILLIT_H
+# define FILLIT_H
 # define BUF_SIZE 5
 # define ERROR "error"
 

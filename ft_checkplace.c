@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/12 10:22:45 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 13:56:02 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:39:08 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int		ft_notpoint(char c, int x)
 	return (x);
 }
 
-int		ft_checkplace(char *dest, char *str, int ssqrt)
+int				ft_checkplace(char *dest, char *str, int ssqrt)
 {
 	int x;
 	int i;
@@ -88,4 +88,3 @@ int		ft_checkplace(char *dest, char *str, int ssqrt)
 	}
 	return (-1);
 }
-

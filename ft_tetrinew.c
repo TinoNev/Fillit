@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 10:25:17 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/16 13:20:40 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:41:02 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int		ft_sizetetri(char *str)
 	return (size);
 }
 
-static char	**ft_tetrisplit(char *str, int size)
+static char		**ft_tetrisplit(char *str, int size)
 {
 	int		i;
 	int		x;
@@ -53,7 +53,7 @@ static char	**ft_tetrisplit(char *str, int size)
 	return (tetri);
 }
 
-static char	**ft_tetricmp(char **s1, char **s2)
+static char		**ft_tetricmp(char **s1, char **s2)
 {
 	int	i;
 	int	j;
@@ -74,7 +74,7 @@ static char	**ft_tetricmp(char **s1, char **s2)
 	return (s1);
 }
 
-static char	**ft_alphatetri(char **tetri)
+static char		**ft_alphatetri(char **tetri)
 {
 	int		x;
 	int		y;
@@ -98,11 +98,11 @@ static char	**ft_alphatetri(char **tetri)
 	return (tetri);
 }
 
-char	**ft_tetrinew(char *str)
+char		**ft_tetrinew(char *str)
 {
-	char **tetri;
-	char **tab;
-	int x;
+	char	**tetri;
+	char	**tab;
+	int		x;
 
 	x = 0;
 	tab = ft_tabvalue();

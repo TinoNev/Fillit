@@ -6,13 +6,13 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:24:12 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/16 13:49:11 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:39:51 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static char	*ft_destcpy(char *src, char *dest, int x, int i)
+static char		*ft_destcpy(char *src, char *dest, int x, int i)
 {
 	if (src[i] >= 'A' && src[i] <= 'Z')
 	{
@@ -21,7 +21,7 @@ static char	*ft_destcpy(char *src, char *dest, int x, int i)
 	return (dest);
 }
 
-char	*ft_display(char *src, char *dest, int x, int ssqrt)
+char			*ft_display(char *src, char *dest, int x, int ssqrt)
 {
 	int i;
 	int tmp;

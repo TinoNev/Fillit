@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 10:56:35 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 14:16:10 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 09:25:36 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ int		ft_nexttetri(char **tetri, char *dest, int x)
 
 	y = 0;
 	i = 0;
-	while (tetri[x]!= '\0')
+	while (tetri[x] != '\0')
 	{
+		y = ft_ispoint(tetri[x], y);
 		if (tetri[x][y] >= 'A' && tetri[x][y] <= 'Z')
 		{
 			while (dest[i] != tetri[x][y] && dest[i] != '\0')
-					i++;
+				i++;
 			if (dest[i] == '\0')
 				return (x);
 			else
@@ -67,7 +68,6 @@ int		ft_nexttetri(char **tetri, char *dest, int x)
 			}
 		}
 		x++;
-		y++;
 	}
 	return (-1);
 }
