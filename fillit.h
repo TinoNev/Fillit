@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 16:11:08 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 16:35:52 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ int		ft_startvalue(char *src, int i, int start);
 int		ft_ispoint(char *src, int i);
 int		ft_checkplace(char *dest, char *str, int ssqrt);
 char	*ft_display(char *src, char *dest, int x, int ssqrt);
-char	ft_savechar(char *str);
+char	*ft_savechar(char *str, int len, char *c);
+char	*ft_dellastchar(char *c, int len);
 char	*ft_upsizedest(char *dest, int ssqrt);
 char	*ft_dellasttetri(char *dest, char c);
 int		ft_checkupdest(char *dest, char **tetri);
