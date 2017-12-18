@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/15 11:54:25 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 12:34:47 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 14:51:23 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ char	*ft_backtracking(char **tetri, char *dest, int ssqrt)
 		{
 			ft_display(tetri[x], dest, i, ssqrt);
 			tmp = x;
-			c = ft_savechar(tetri[x]);
 			x = 0;
 			i = 0;
 		}
@@ -44,6 +43,7 @@ char	*ft_backtracking(char **tetri, char *dest, int ssqrt)
 				x = tmp + 1;
 			}
 		}
+		c = ft_savechar(dest);
 	}
 	if (ft_checkupdest(dest, tetri) == 0)
 	{

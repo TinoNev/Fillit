@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/16 13:58:52 by lchaillo         ###   ########.fr       */
+/*   Updated: 2017/12/18 14:50:49 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,16 @@ int		ft_ispoint(char *src, int i)
 	return (i);
 }
 
-char	ft_savechar(char *str)
+char	ft_savechar(char *dest)
 {
-	int i;
+	int len;
 
-	i = 0;
-	while (str[i] == '.')
-		++i;
-	return (str[i]);
+	len = ft_strlen(dest);
+	while (len >= 0)
+	{
+		if (dest[len] >= 'A' && dest[len] <= 'Z')
+			return (dest[len]);
+		len--;
+	}
+	return (0);
 }
