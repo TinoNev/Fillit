@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/18 16:35:52 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/08 15:30:31 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # include <stdio.h> // A EFFACER AVANT DE RENDRE !!!!
 
 int		ft_usage(int argc);
-char	*ft_convert(char *file);
+int		ft_count_size(char *file);
+char	*ft_convert(char *file, int size);
 int		ft_valid_char(char *str);
 int		ft_are_four(char *str);
 int		ft_count_char(char *str);
@@ -44,7 +45,8 @@ char	*ft_upsizedest(char *dest, int ssqrt);
 char	*ft_dellasttetri(char *dest, char c);
 int		ft_checkupdest(char *dest, char **tetri);
 int		ft_nexttetri(char **tetri, char *dest, int x);
-char	*ft_backtracking(char **tetri, char *dest, int ssqrt);
+char	*ft_backtracking2(char **tetri, char *dest, int ssqrt);
 int		ft_destchar(char *str);
+int		ft_convertclen(char **tetri, char c);
 
 #endif

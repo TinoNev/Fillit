@@ -6,13 +6,13 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 17:55:24 by tlaberro          #+#    #+#             */
-/*   Updated: 2017/12/16 12:36:15 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/08 11:02:50 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int		ft_count_size(char *file)
+int		ft_count_size(char *file)
 {
 	int		fd;
 	int		ret;
@@ -30,15 +30,13 @@ static int		ft_count_size(char *file)
 	return (size);
 }
 
-char			*ft_convert(char *file)
+char	*ft_convert(char *file, int size)
 {
-	int		size;
 	int		fd;
 	int		ret;
 	char	*buf;
 	char	*dest;
 
-	size = ft_count_size(file);
 	buf = ft_strnew(size);
 	dest = ft_strnew(size);
 	fd = open(file, O_RDONLY);
