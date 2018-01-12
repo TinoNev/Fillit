@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/08 15:57:33 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:10:44 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		ft_ispoint(char *src, int i)
 char	*ft_savechar(char *str, int len, char *c)
 {
 	int i;
-	int x;
 	char *tmp;
 
 	i = 0;

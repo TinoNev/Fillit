@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/08 15:30:40 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/09 12:10:16 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char	*ft_newdest(char *str)
 	char	*dest;
 	int		nb;
 	char	**tetri;
-	int		n;
 
 	tetri = ft_tetrinew(str);
 	nb = ft_nbdiese(str);
