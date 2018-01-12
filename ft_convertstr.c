@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 17:55:24 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/09 14:30:05 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/12 10:33:38 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int		ft_count_size(char *file)
 	int		fd;
 	int		ret;
 	int		size;
-	char	*buf;
+	char	buf[BUF_SIZE + 1];
 
-	size = 0;
+	size = BUF_SIZE;
 	fd = open(file, O_RDONLY);
 	while ((ret = read(fd, buf, BUF_SIZE)))
 	{
