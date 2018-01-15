@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:25:49 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/08 13:16:01 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/12 11:17:03 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,5 @@ int		ft_convertclen(char **tetri, char c)
 			return (x);
 		x++;
 	}
-	return (-3);
+	return (-2);
 }

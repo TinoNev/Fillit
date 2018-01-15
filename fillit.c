@@ -6,23 +6,11 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/09 12:10:16 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:46:26 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-void	ft_puttab(char **tetri)
-{
-	int	x;
-
-	x = 0;
-	while (tetri[x] != '\0')
-	{
-		printf("%s\n", tetri[x]);
-		x++;
-	}
-}
 
 char	*ft_newdest(char *str)
 {
@@ -36,7 +24,6 @@ char	*ft_newdest(char *str)
 	ssqrt = ft_ssqrt(nb);
 	dest = ft_destvalue(ssqrt);
 	dest = ft_backtracking2(tetri, dest, ssqrt);
-	printf("%s\n", dest);
 	return (dest);
 }
 
@@ -53,5 +40,6 @@ int		main(int argc, char **argv)
 	if (ft_is_valid(str) == 0)
 		return (0);
 	dest = ft_newdest(str);
+	ft_putendl(dest);
 	return (1);
 }
