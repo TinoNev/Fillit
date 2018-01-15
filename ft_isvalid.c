@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 10:50:47 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/08 11:03:01 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/15 19:09:27 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,13 @@ int		ft_usage(int argc)
 
 int		ft_is_valid(char *str)
 {
-	if (ft_valid_char(str) == 0 || ft_are_four(str) == 0 || ft_error(str) == 0
-			|| ft_count_char(str) == 0 || ft_count_line(str) == 0)
+	if (ft_valid_char(str) == 0 || ft_count_line(str) == 0
+			|| ft_count_char(str) == 0)
+	{
+		ft_putendl(ERROR);
+		return (0);
+	}
+	else if (ft_are_four(str) == 0 || ft_error(str) == 0)
 	{
 		ft_putendl(ERROR);
 		return (0);

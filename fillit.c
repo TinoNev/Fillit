@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/15 14:59:53 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/15 19:24:01 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_newdest(char *str)
 	char	**tetri;
 
 	tetri = ft_tetrinew(str);
+	if (tetri == NULL)
+	{
+		return (NULL);
+	}
 	nb = ft_nbdiese(str);
 	ssqrt = ft_ssqrt(nb);
 	dest = ft_destvalue(ssqrt);
@@ -40,6 +44,12 @@ int		main(int argc, char **argv)
 	if (ft_is_valid(str) == 0)
 		return (0);
 	dest = ft_newdest(str);
-	ft_putendl(dest);
+	if (dest == NULL)
+	{
+		ft_putendl(ERROR);
+		return (0);
+	}
+	else
+		ft_putendl(dest);
 	return (1);
 }

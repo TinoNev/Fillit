@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 10:25:17 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/18 09:41:02 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/15 18:38:58 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static char		**ft_tetricmp(char **s1, char **s2)
 		while (s2[j] && (ft_atoibin(s1[i]) % ft_atoibin(s2[j]) != 0))
 			j++;
 		if (s2[j] == '\0')
-			s1[i] = ERROR;
+			return(NULL);
 		else
 			s1[i] = ft_strcpy(s1[i], s2[j]);
 		j = 0;
@@ -108,6 +108,8 @@ char			**ft_tetrinew(char *str)
 	tab = ft_tabvalue();
 	tetri = ft_tetrisplit(str, ft_sizetetri(str));
 	tetri = ft_tetricmp(tetri, tab);
+	if (tetri == NULL)
+		return (NULL);
 	tetri = ft_alphatetri(tetri);
 	return (tetri);
 }
