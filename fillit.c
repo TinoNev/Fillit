@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/15 14:46:26 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/15 14:59:53 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_newdest(char *str)
 	nb = ft_nbdiese(str);
 	ssqrt = ft_ssqrt(nb);
 	dest = ft_destvalue(ssqrt);
-	dest = ft_backtracking2(tetri, dest, ssqrt);
+	dest = ft_backtracking(tetri, dest, ssqrt);
 	return (dest);
 }
 
