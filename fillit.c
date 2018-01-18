@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/18 15:04:27 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 17:01:53 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int		main(int argc, char **argv)
 	if (ft_usage(argc) == 0)
 		return (0);
 	size = ft_count_size(argv[1]);
+	if (size == -1)
+	{
+		ft_putendl(ERROR);
+		return (0);
+	}
 	str = ft_convert(argv[1], size);
 	if (ft_is_valid(str) == 0)
 		return (0);

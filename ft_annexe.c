@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/16 12:03:42 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 17:00:45 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,4 @@ char	*ft_dellastchar(char *c, int len)
 		i++;
 	}
 	return (c);
-}
-
-int		ft_destchar(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			return (1);
-		++i;
-	}
-	return (0);
 }
