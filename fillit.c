@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/15 19:24:01 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 15:04:27 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ int		main(int argc, char **argv)
 		return (0);
 	}
 	else
-		ft_putendl(dest);
+		ft_putstr(dest);
 	return (1);
 }

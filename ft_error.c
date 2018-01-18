@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:19:50 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/15 19:17:11 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 14:46:28 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,40 +93,11 @@ int		ft_count_line(char *str)
 	while (str[i] != '\0')
 	{
 		if (str[i] == '\n')
-		{
 			n++;
-			if (n == 4)
-			{
-				if (str[i + 1] == '\n' || str[i + 1] == '\0')
-				{
-					i++;
-					n = 0;
-				}
-				else
-					return (0);
-			}
-		}
 		i++;
 	}
-	return (1);
-}
-
-int		ft_error(char *str)
-{
-	int i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == '#')
-		{
-			if (str[i - 1] == '#' || str[i + 1] == '#' || str[i + 5] == '#'
-					|| str[i - 5] == '#')
-				++i;
-			else
-				return (0);
-		}
-		++i;
-	}
-	return (1);
+	if (n == 4 || (n - 4) % 5 == 0)
+		return (1);
+	else
+		return (0);
 }

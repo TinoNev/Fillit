@@ -6,7 +6,7 @@
 #    By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/28 11:10:26 by tlaberro          #+#    #+#              #
-#    Updated: 2018/01/15 13:58:05 by tlaberro         ###   ########.fr        #
+#    Updated: 2018/01/18 14:53:38 by tlaberro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,8 @@ SRC = ./fillit.c\
 	  ./ft_annexe_two.c\
 	  ./ft_atoibin.c\
 	  ./ft_backtracking.c\
+	  ./ft_backtracking_support.c\
+	  ./ft_backtracking_support2.c\
 	  ./ft_checkplace.c\
 	  ./ft_convertstr.c\
 	  ./ft_destvalue.c\

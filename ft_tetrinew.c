@@ -6,13 +6,13 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/02 10:25:17 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/15 18:38:58 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 15:00:50 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-static int		ft_sizetetri(char *str)
+int				ft_sizetetri(char *str)
 {
 	int	i;
 	int	n;
@@ -31,7 +31,7 @@ static int		ft_sizetetri(char *str)
 	return (size);
 }
 
-static char		**ft_tetrisplit(char *str, int size)
+char			**ft_tetrisplit(char *str, int size)
 {
 	int		i;
 	int		x;
@@ -65,7 +65,7 @@ static char		**ft_tetricmp(char **s1, char **s2)
 		while (s2[j] && (ft_atoibin(s1[i]) % ft_atoibin(s2[j]) != 0))
 			j++;
 		if (s2[j] == '\0')
-			return(NULL);
+			return (NULL);
 		else
 			s1[i] = ft_strcpy(s1[i], s2[j]);
 		j = 0;

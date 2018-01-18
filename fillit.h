@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/15 18:17:31 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/18 15:01:24 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct		s_variable
 	int		x;
 	int		i;
 	int		len;
+	int		temp;
 	char	*c;
 }					t_v;
 
@@ -44,7 +45,7 @@ int					ft_atoibin(char *str);
 char				**ft_tetrinew(char *str);
 int					ft_startvalue(char *src, int i, int start);
 int					ft_ispoint(char *src, int i);
-int					ft_checkplace(char *dest, char *str, int ssqrt);
+int					ft_checkplace(char *dest, char *str, int ssqrt, int x);
 char				*ft_display(char *src, char *dest, int x, int ssqrt);
 char				*ft_savechar(char *str, int len, char *c);
 char				*ft_dellastchar(char *c, int len);
@@ -55,5 +56,16 @@ int					ft_nexttetri(char **tetri, char *dest, int x);
 char				*ft_backtracking(char **tetri, char *dest, int ssqrt);
 int					ft_destchar(char *str);
 int					ft_convertclen(char **tetri, char c);
+char				*ft_del(char **tetri, char *dest, t_v *v, int ssqrt);
+char				*ft_del2(char **tetri, char *dest, t_v *v);
+char				ft_tablen(char **tetri);
+int					ft_upssqrt(char **tetri, int ssqrt, t_v *v, char *dest);
+char				*ft_destchange(char **tetri, char *dest, int ssqrt, t_v *v);
+char				*ft_destchange2(char **tetri,
+											char *dest, int ssqrt, t_v *v);
+int					ft_sizetetri(char *str);
+char				**ft_tetrisplit(char *str, int size);
+int					ft_tempvalue(char *s1, char *s2);
+int					ft_checkpoint2(char *dest);
 
 #endif
