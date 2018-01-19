@@ -6,13 +6,13 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 10:50:47 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/18 15:00:16 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/19 11:02:08 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_usage(int argc)
+int			ft_usage(int argc)
 {
 	char	*usage;
 
@@ -25,7 +25,7 @@ int		ft_usage(int argc)
 	return (1);
 }
 
-int		ft_strerror(char *str)
+static int	ft_strerror(char *str)
 {
 	int i;
 	int c;
@@ -49,7 +49,7 @@ int		ft_strerror(char *str)
 		return (0);
 }
 
-int		ft_error(char *str)
+static int	ft_error(char *str)
 {
 	char	**tetri;
 	int		x;
@@ -67,7 +67,7 @@ int		ft_error(char *str)
 	return (1);
 }
 
-int		ft_is_valid(char *str)
+int			ft_is_valid(char *str)
 {
 	if (ft_valid_char(str) == 0 || ft_count_line(str) == 0
 			|| ft_count_char(str) == 0)

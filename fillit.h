@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/18 17:00:30 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/19 11:02:06 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int					ft_valid_char(char *str);
 int					ft_are_four(char *str);
 int					ft_count_char(char *str);
 int					ft_count_line(char *str);
-int					ft_error(char *str);
 int					ft_is_valid(char *str);
 char				**ft_tabvalue(void);
 int					ft_nbdiese(char *str);
@@ -55,16 +54,10 @@ int					ft_checkupdest(char *dest, char **tetri);
 int					ft_nexttetri(char **tetri, char *dest, int x);
 char				*ft_backtracking(char **tetri, char *dest, int ssqrt);
 int					ft_convertclen(char **tetri, char c);
-char				*ft_del(char **tetri, char *dest, t_v *v, int ssqrt);
-char				*ft_del2(char **tetri, char *dest, t_v *v);
 char				ft_tablen(char **tetri);
 int					ft_upssqrt(char **tetri, int ssqrt, t_v *v, char *dest);
 char				*ft_destchange(char **tetri, char *dest, int ssqrt, t_v *v);
-char				*ft_destchange2(char **tetri,
-											char *dest, int ssqrt, t_v *v);
 int					ft_sizetetri(char *str);
 char				**ft_tetrisplit(char *str, int size);
-int					ft_tempvalue(char *s1, char *s2);
-int					ft_checkpoint2(char *dest);
 
 #endif
