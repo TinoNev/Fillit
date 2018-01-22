@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/22 12:04:49 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/22 16:09:05 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 		if (v->i != -1)
 		{
 			dest = ft_display(tetri[v->x], dest, v->i, ssqrt);
+			ft_putendl(dest);
 			v->temp = v->i;
 			v->i = 0;
 			if (ft_ccmp(tetri[v->x], v) == 0)
@@ -87,15 +88,10 @@ char			*ft_backtracking(char **tetri, char *dest, int ssqrt)
 		{
 			ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
 			dest = ft_destchange(tetri, dest, ssqrt, v);
-			while (ft_nexttetri(tetri, dest, v->x) == -1 && v->len > 0)
+			while (ft_nexttetri(tetri, dest, v->x) == -1 && v->len > 1)
 			{
 				ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
-				dest = ft_destchange(tetri, dest, ssqrt, v);
-				while (ft_nexttetri(tetri, dest, v->x) == -1 && v->len > 0)
-				{
-					ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
-					dest = ft_destchange2(tetri, dest, ssqrt, v);
-				}
+				dest = ft_destchange2(tetri, dest, ssqrt, v);
 			}
 		}
 	}
