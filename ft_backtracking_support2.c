@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 10:14:17 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/22 10:16:47 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/22 12:06:04 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 
 static char	*ft_del2(char **tetri, char *dest, t_v *v)
 {
-	v->x = ft_convertclen(tetri, v->c[v->len - 1]) + 1;
+	v->x = ft_convertclen(tetri, v->c[v->len - 1]);
 	v->len--;
 	ft_dellasttetri(dest, v->c[v->len]);
 	v->c = ft_dellastchar(v->c, v->len);
+	v->x++;
 	v->i = 0;
 	return (dest);
 }
