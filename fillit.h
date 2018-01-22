@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/22 12:06:13 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/22 19:26:28 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char				*ft_upsizedest(char *dest, int ssqrt);
 char				*ft_dellasttetri(char *dest, char c);
 int					ft_checkupdest(char *dest, char **tetri);
 int					ft_nexttetri(char **tetri, char *dest, int x);
-char				*ft_backtracking(char **tetri, char *dest, int ssqrt);
+char				*ft_backtracking(char **tetri, char *dest, int *ssqrt);
 int					ft_convertclen(char **tetri, char c);
 char				ft_tablen(char **tetri);
 int					ft_upssqrt(char **tetri, int ssqrt, t_v *v, char *dest);
@@ -62,5 +62,6 @@ char				**ft_tetrisplit(char *str, int size);
 char				*ft_destchange2(char **tetri, char *dest,
 										int ssqrt, t_v *v);
 int					ft_checkpoint2(char *dest);
+char				*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt);
 
 #endif
