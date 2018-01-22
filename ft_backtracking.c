@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/19 09:52:04 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/22 10:10:27 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ char			*ft_backtracking(char **tetri, char *dest, int ssqrt)
 	while (ft_checkupdest(dest, tetri) == 0)
 	{
 		dest = ft_firststep(tetri, dest, ssqrt, v);
-		ft_putendl(dest);
 		if (ft_checkupdest(dest, tetri) == 0)
 		{
 			ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
@@ -92,6 +91,11 @@ char			*ft_backtracking(char **tetri, char *dest, int ssqrt)
 			{
 				ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
 				dest = ft_destchange(tetri, dest, ssqrt, v);
+			}
+			while (ft_nexttetri(tetri, dest, v->x) == -1 && v->len > 0)
+			{
+				ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
+				dest = ft_destchange2(tetri, dest, ssqrt, v);
 			}
 		}
 	}

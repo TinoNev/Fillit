@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 14:07:00 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/19 11:03:30 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/22 10:16:44 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	ft_tempvalue(char *s1, char *s2)
 	return (j);
 }
 
-static int	ft_checkpoint2(char *dest)
+int			ft_checkpoint2(char *dest)
 {
 	int i;
 
