@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/05 17:55:24 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 09:36:56 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:06:41 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ char	*ft_convert(char *file)
 	char	buf[BUF_SIZE + 1];
 	char	*dest;
 
-	if(!(fd = open(file, O_RDONLY)))
+	fd = open(file, O_RDONLY);
+	if (fd == -1)
 		return (NULL);
 	ret = read(fd, buf, BUF_SIZE);
 	buf[ret] = '\0';
