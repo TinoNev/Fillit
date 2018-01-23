@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 15:12:26 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:36:17 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 			v->temp = v->i;
 			v->i = 0;
 			v->mem = v->x;
-			v->x = 0;
 		}
 		else
 			v->x++;

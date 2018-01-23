@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/01 14:19:50 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/18 14:46:28 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:51:56 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@ int		ft_valid_char(char *str)
 	i = 0;
 	size = ft_strlen(str);
 	while (str[i] != '\0' && str[i] == '.' | str[i] == '#' | str[i] == '\n')
-	{
 		i++;
-	}
 	if (i == size)
 		return (1);
 	else

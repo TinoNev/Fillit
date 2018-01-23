@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:24:12 by lchaillo          #+#    #+#             */
-/*   Updated: 2017/12/18 16:12:35 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:51:39 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 static char		*ft_destcpy(char *src, char *dest, int x, int i)
 {
 	if (src[i] >= 'A' && src[i] <= 'Z')
-	{
 		dest[x] = src[i];
-	}
 	return (dest);
 }
 
