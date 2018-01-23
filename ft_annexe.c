@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:45:43 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/23 14:56:29 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:12:53 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,12 @@ int		ft_ispoint(char *src, int i)
 	return (i);
 }
 
-char	*ft_dellasttetri(char *dest, char *str)
+void	ft_initv(t_v *v)
 {
-	int i;
-	int x;
-
-	i = ft_ispoint(str, 0);
-	x = 0;
-	while (dest[x] != '\0')
-	{
-		if (dest[x] == str[i])
-			dest[x] = '.';
-		x++;
-	}
-	return (dest);
+	v->x = 0;
+	v->i = 0;
+	v->temp = 0;
+	v->mem = 0;
 }
 
 int		ft_checkupdest(char *dest, char **tetri)

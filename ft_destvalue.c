@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:27:08 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/15 16:10:43 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:11:37 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,21 @@ char	*ft_upsizedest(char *dest, int ssqrt)
 {
 	ft_strdel(&dest);
 	dest = ft_destvalue(ssqrt);
+	return (dest);
+}
+
+char	*ft_dellasttetri(char *dest, char *str)
+{
+	int i;
+	int x;
+
+	i = ft_ispoint(str, 0);
+	x = 0;
+	while (dest[x] != '\0')
+	{
+		if (dest[x] == str[i])
+			dest[x] = '.';
+		x++;
+	}
 	return (dest);
 }

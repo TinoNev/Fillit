@@ -6,19 +6,11 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 15:00:40 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:12:26 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-
-static void		ft_initv(t_v *v)
-{
-	v->x = 0;
-	v->i = 0;
-	v->temp = 0;
-	v->mem = 0;
-}
 
 static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 {
