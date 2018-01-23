@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:24:53 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 14:15:47 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:59:07 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,5 @@ int					ft_nexttetri(char **tetri, char *dest, int x);
 char				*ft_backtracking(char **tetri, char *dest, int *ssqrt);
 int					ft_sizetetri(char *str);
 char				**ft_tetrisplit(char *str, int size);
-//int					ft_checkpoint2(char *dest);
-char				*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt);
 
 #endif

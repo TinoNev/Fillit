@@ -6,7 +6,7 @@
 #    By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/28 11:10:26 by tlaberro          #+#    #+#              #
-#    Updated: 2018/01/23 13:32:40 by lchaillo         ###   ########.fr        #
+#    Updated: 2018/01/23 14:59:28 by lchaillo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,8 @@ NAME = fillit
 
 SRC = ./fillit.c\
 	  ./ft_annexe.c\
-	  ./ft_annexe_two.c\
 	  ./ft_atoibin.c\
 	  ./ft_backtracking.c\
-	  ./ft_backtracking_support.c\
 	  ./ft_checkplace.c\
 	  ./ft_convertstr.c\
 	  ./ft_destvalue.c\

@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 14:38:47 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 15:00:40 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 	return (dest);
 }
 
-static int	ft_checkpoint2(char *dest)
+static int		ft_checkpoint2(char *dest)
 {
 	int i;
 
@@ -51,6 +51,46 @@ static int	ft_checkpoint2(char *dest)
 		return (1);
 	else
 		return (0);
+}
+
+static int		ft_tempvalue(char *s1, char *s2)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	i = ft_ispoint(s1, i);
+	while (s1[i] != s2[j])
+		j++;
+	return (j);
+}
+
+static char		*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt)
+{
+	v->temp = ft_tempvalue(tetri[v->x], dest);
+	ft_dellasttetri(dest, tetri[v->x]);
+	if (ft_checkplace(dest, tetri[0], *ssqrt, v->temp + 1) == -1 && v->x == 0)
+	{
+		(*ssqrt)++;
+		dest = ft_upsizedest(dest, *ssqrt);
+		v->x = 0;
+		v->i = 0;
+		v->temp = 0;
+	}
+	else if (ft_checkplace(dest, tetri[v->x], *ssqrt, v->temp + 1) == -1)
+	{
+		v->x--;
+		v->temp = ft_tempvalue(tetri[v->x], dest);
+		v->i = 0;
+		return (ft_del(tetri, dest, v, ssqrt));
+	}
+	else
+	{
+		v->temp++;
+		v->i = v->temp;
+	}
+	return (dest);
 }
 
 char			*ft_backtracking(char **tetri, char *dest, int *ssqrt)

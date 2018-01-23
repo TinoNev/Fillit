@@ -6,7 +6,7 @@
 /*   By: lchaillo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 11:12:18 by lchaillo          #+#    #+#             */
-/*   Updated: 2018/01/23 13:52:06 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:54:22 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int		main(int argc, char **argv)
 {
 	char	*str;
 	char	*dest;
-	//int		size;
 
 	if (ft_usage(argc) == 0)
 		return (0);
