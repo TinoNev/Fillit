@@ -6,22 +6,24 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 11:25:49 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/15 17:00:49 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/01/23 13:52:23 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_dellasttetri(char *dest, char c)
+char	*ft_dellasttetri(char *dest, char *str)
 {
 	int i;
+	int x;
 
-	i = 0;
-	while (dest[i] != '\0')
+	i = ft_ispoint(str, 0);
+	x = 0;
+	while (dest[x] != '\0')
 	{
-		if (dest[i] == c)
-			dest[i] = '.';
-		i++;
+		if (dest[x] == str[i])
+			dest[x] = '.';
+		x++;
 	}
 	return (dest);
 }
@@ -80,23 +82,4 @@ int		ft_nexttetri(char **tetri, char *dest, int x)
 		x++;
 	}
 	return (-1);
-}
-
-int		ft_convertclen(char **tetri, char c)
-{
-	int	x;
-	int	y;
-
-	x = 0;
-	y = 0;
-	while (tetri[x] != '\0')
-	{
-		y = ft_ispoint(tetri[x], y);
-		if (tetri[x][y] != c)
-			y = 0;
-		else
-			return (x);
-		x++;
-	}
-	return (-2);
 }

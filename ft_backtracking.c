@@ -6,47 +6,18 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/22 19:26:45 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 13:57:22 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char			ft_tablen(char **tetri)
-{
-	int		y;
-	int		x;
-	char	c;
-
-	y = 0;
-	x = 0;
-	c = 0;
-	while (tetri[x] != '\0')
-		x++;
-	y = ft_ispoint(tetri[x - 1], y);
-	c = tetri[x - 1][y];
-	return (c);
-}
-
 static void		ft_initv(t_v *v)
 {
 	v->x = 0;
 	v->i = 0;
-	v->len = 0;
 	v->temp = 0;
-	v->c = ft_strnew(v->len);
-}
-
-static int		ft_ccmp(char *str, t_v *v)
-{
-	int		i;
-
-	i = 0;
-	i = ft_ispoint(str, i);
-	if (v->c[v->len - 1] == str[i])
-		return (1);
-	else
-		return (0);
+	v->mem = 0;
 }
 
 static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
@@ -61,11 +32,7 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 			ft_putendl(dest);
 			v->temp = v->i;
 			v->i = 0;
-			if (ft_ccmp(tetri[v->x], v) == 0)
-			{
-				v->len++;
-				v->c = ft_savechar(tetri[v->x], v->len, v->c);
-			}
+			v->mem = v->x;
 			v->x = 0;
 		}
 		else
@@ -86,7 +53,7 @@ char			*ft_backtracking(char **tetri, char *dest, int *ssqrt)
 		dest = ft_firststep(tetri, dest, *ssqrt, v);
 		if (ft_checkupdest(dest, tetri) == 0)
 		{
-			//ssqrt = ft_upssqrt(tetri, ssqrt, v, dest);
+			v->x = v->mem;
 			dest = ft_del(tetri, dest, v, ssqrt);
 		}
 	}
