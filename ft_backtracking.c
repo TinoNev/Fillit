@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 14:24:21 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:38:47 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 		if (v->i != -1)
 		{
 			dest = ft_display(tetri[v->x], dest, v->i, ssqrt);
-			ft_putendl(dest);
 			v->temp = v->i;
 			v->i = 0;
 			v->mem = v->x;

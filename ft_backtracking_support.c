@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 14:07:00 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 14:24:23 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:37:56 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt)
 		v->i = 0;
 		v->temp = 0;
 	}
-	if (ft_checkplace(dest, tetri[v->x], *ssqrt, v->temp + 1) == -1)
+	else if (ft_checkplace(dest, tetri[v->x], *ssqrt, v->temp + 1) == -1)
 	{
 		v->x--;
 		v->temp = ft_tempvalue(tetri[v->x], dest);
