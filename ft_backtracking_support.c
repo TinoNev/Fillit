@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/16 14:07:00 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 13:48:32 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:24:23 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,6 @@ static int	ft_tempvalue(char *s1, char *s2)
 	while (s1[i] != s2[j])
 		j++;
 	return (j);
-}
-
-int			ft_checkpoint2(char *dest)
-{
-	int i;
-
-	i = 0;
-	while (dest[i] == '.' || dest[i] == '\n')
-		i++;
-	if (dest[i] == '\0')
-		return (1);
-	else
-		return (0);
 }
 
 char	*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt)
@@ -63,11 +50,4 @@ char	*ft_del(char **tetri, char *dest, t_v *v, int *ssqrt)
 		v->i = v->temp;
 	}
 	return (dest);
-}
-
-int			ft_upssqrt(char **tetri, int ssqrt, t_v *v, char *dest)
-{
-	if (ft_checkplace(dest, tetri[0], ssqrt, v->temp + 1) == -1 && v->x == 0)
-		++ssqrt;
-	return (ssqrt);
 }

@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/08 15:10:46 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/01/23 13:57:22 by lchaillo         ###   ########.fr       */
+/*   Updated: 2018/01/23 14:24:21 by lchaillo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,19 @@ static char		*ft_firststep(char **tetri, char *dest, int ssqrt, t_v *v)
 	return (dest);
 }
 
+static int	ft_checkpoint2(char *dest)
+{
+	int i;
+
+	i = 0;
+	while (dest[i] == '.' || dest[i] == '\n')
+		i++;
+	if (dest[i] == '\0')
+		return (1);
+	else
+		return (0);
+}
+
 char			*ft_backtracking(char **tetri, char *dest, int *ssqrt)
 {
 	t_v *v;
@@ -54,7 +67,16 @@ char			*ft_backtracking(char **tetri, char *dest, int *ssqrt)
 		if (ft_checkupdest(dest, tetri) == 0)
 		{
 			v->x = v->mem;
-			dest = ft_del(tetri, dest, v, ssqrt);
+			if (ft_checkpoint2(dest) == 1)
+			{
+				(*ssqrt)++;
+				dest = ft_upsizedest(dest, *ssqrt);
+				v->x = 0;
+				v->i = 0;
+				v->temp = 0;
+			}
+			else
+				dest = ft_del(tetri, dest, v, ssqrt);
 		}
 	}
 	return (dest);
